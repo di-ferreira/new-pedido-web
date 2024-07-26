@@ -1,8 +1,9 @@
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
 
-const openSans = Open_Sans({ subsets: ['latin'] });
+const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'EMSoft Pedido Web',
@@ -18,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br'>
-      <body className={openSans.className}>{children}</body>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          openSans.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }

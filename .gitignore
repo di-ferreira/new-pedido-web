@@ -38,3 +38,4 @@ next-env.d.ts
 *storybook.log
 yarn.lock
 package-lock.json
+.env
